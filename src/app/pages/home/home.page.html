@@ -1,0 +1,19 @@
+<ion-header>
+  <img src="assets/logo_duoc.svg" alt="Logo">
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="servicesList">
+    <ion-row class="row">
+      <ion-col col-12 class="welcome-msg">Bienvenido, {{currentUser}}</ion-col>
+    </ion-row>
+      <ion-row class="row">
+        <ion-col *ngFor='let service of servicesList' col-4>
+          <a (click)="goToPage(service)">
+            <img src="{{service.icon}}" alt="" style="max-width: 75px; width: 75px;padding: 15px;">
+            <h6 style="text-align: center;margin-left: -5px; font-size: 12px; font-family: 'Montserrat', sans-serif; color: #002e54;margin-top: -5px;">{{service.name}}</h6>
+          </a>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

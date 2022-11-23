@@ -1,0 +1,20 @@
+<ion-content [style.visibility]="content_visibility">
+  <ion-button expand="block" class="ion-margin" (click)="startScan()">Scan QR Code</ion-button>
+  <ion-item><ion-label class="ion-text-wrap">Estado Solicitud: {{errorMsg}}</ion-label></ion-item>
+
+  <div id="courses-list">
+    <ion-list *ngIf="coursesList">
+      <ion-card *ngFor="let course of coursesList">
+        <ion-card-header>
+          <ion-card-title>{{course.name}}</ion-card-title>
+          <ion-card-subtitle>{{course.teacher}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{currentAssistance}} / {{course.numberSessions}}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+</ion-content>
+<!---->

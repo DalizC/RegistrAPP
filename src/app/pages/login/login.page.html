@@ -1,0 +1,24 @@
+<ion-content>
+  <div id="header">
+    <img src="assets/bannerlogo.png" alt="Logo">
+    <h1>Iniciar sesión</h1>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h4 *ngIf="errorMsg!=''" class="error-msg">{{errorMsg}}</h4>
+
+    <ion-item>
+      <ion-input placeholder="Ingrese su correo institucional" type="text" formControlName="user"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input type="Password" placeholder="Ingrese su contraseña" formControlName="password"></ion-input>
+    </ion-item>
+    <br><br>
+    <a id="restoreAccountLink" href="/restore">¿Ha olvidado su contraseña?</a>
+    <br><br>
+    <ion-button id="btnLogin" type="submit" [disabled]="!loginForm.valid">Iniciar sesión</ion-button>
+  </form>
+</ion-content>
+<ion-footer>
+  ¿Problemas con tu cuenta? Comunícate con nosotros
+</ion-footer>

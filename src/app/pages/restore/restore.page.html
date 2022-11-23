@@ -1,0 +1,20 @@
+<ion-content>
+  <div id="header">
+    <img src="assets/bannerlogo.png" alt="Logo">
+    <h1>Recuperar contraseña</h1>
+  </div>
+  <form [formGroup]="restoreForm" (ngSubmit)="onSubmit()">
+      <h4 *ngIf="errorMsg!=''" class="error-msg">{{errorMsg}}</h4>
+
+    <ion-item>
+      <ion-input placeholder="Ingrese su correo institucional" type="text" formControlName="user"></ion-input>
+    </ion-item>
+    <br><br>
+    <a href="/login">Iniciar sesión</a>
+    <br><br>
+    <ion-button id="btnRestore" type="submit" [disabled]="!restoreForm.valid">Siguiente</ion-button>
+  </form>
+</ion-content>
+<ion-footer>
+  ¿Problemas con tu cuenta? Comunícate con nosotros
+</ion-footer>
